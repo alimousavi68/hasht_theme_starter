@@ -52,6 +52,110 @@ $settings = [
                         'type'    => 'number',
                         'default' => 5,
                     ],
+                    'hasht_home_hero_ad_1_enable' => [
+                        'label'   => 'فعال‌سازی تبلیغ ۱ سایدبار هیرو',
+                        'type'    => 'checkbox',
+                        'default' => 0,
+                    ],
+                    'hasht_home_hero_ad_1_type' => [
+                        'label'   => 'نوع ورودی تبلیغ ۱',
+                        'type'    => 'select',
+                        'choices' => ['image' => 'تصویر', 'html' => 'کد HTML'],
+                        'default' => 'image',
+                    ],
+                    'hasht_home_hero_ad_1_image' => [
+                        'label'   => 'تصویر تبلیغ ۱',
+                        'type'    => 'upload',
+                        'default' => '',
+                    ],
+                    'hasht_home_hero_ad_1_link' => [
+                        'label'   => 'لینک تبلیغ ۱',
+                        'type'    => 'text',
+                        'default' => '',
+                    ],
+                    'hasht_home_hero_ad_1_html' => [
+                        'label'   => 'کد HTML تبلیغ ۱',
+                        'type'    => 'textarea',
+                        'default' => '',
+                    ],
+                    'hasht_home_hero_ad_2_enable' => [
+                        'label'   => 'فعال‌سازی تبلیغ ۲ سایدبار هیرو',
+                        'type'    => 'checkbox',
+                        'default' => 0,
+                    ],
+                    'hasht_home_hero_ad_2_type' => [
+                        'label'   => 'نوع ورودی تبلیغ ۲',
+                        'type'    => 'select',
+                        'choices' => ['image' => 'تصویر', 'html' => 'کد HTML'],
+                        'default' => 'image',
+                    ],
+                    'hasht_home_hero_ad_2_image' => [
+                        'label'   => 'تصویر تبلیغ ۲',
+                        'type'    => 'upload',
+                        'default' => '',
+                    ],
+                    'hasht_home_hero_ad_2_link' => [
+                        'label'   => 'لینک تبلیغ ۲',
+                        'type'    => 'text',
+                        'default' => '',
+                    ],
+                    'hasht_home_hero_ad_2_html' => [
+                        'label'   => 'کد HTML تبلیغ ۲',
+                        'type'    => 'textarea',
+                        'default' => '',
+                    ],
+                    'hasht_home_hero_ad_3_enable' => [
+                        'label'   => 'فعال‌سازی تبلیغ ۳ سایدبار هیرو',
+                        'type'    => 'checkbox',
+                        'default' => 0,
+                    ],
+                    'hasht_home_hero_ad_3_type' => [
+                        'label'   => 'نوع ورودی تبلیغ ۳',
+                        'type'    => 'select',
+                        'choices' => ['image' => 'تصویر', 'html' => 'کد HTML'],
+                        'default' => 'image',
+                    ],
+                    'hasht_home_hero_ad_3_image' => [
+                        'label'   => 'تصویر تبلیغ ۳',
+                        'type'    => 'upload',
+                        'default' => '',
+                    ],
+                    'hasht_home_hero_ad_3_link' => [
+                        'label'   => 'لینک تبلیغ ۳',
+                        'type'    => 'text',
+                        'default' => '',
+                    ],
+                    'hasht_home_hero_ad_3_html' => [
+                        'label'   => 'کد HTML تبلیغ ۳',
+                        'type'    => 'textarea',
+                        'default' => '',
+                    ],
+                    'hasht_home_hero_ad_4_enable' => [
+                        'label'   => 'فعال‌سازی تبلیغ ۴ سایدبار هیرو',
+                        'type'    => 'checkbox',
+                        'default' => 0,
+                    ],
+                    'hasht_home_hero_ad_4_type' => [
+                        'label'   => 'نوع ورودی تبلیغ ۴',
+                        'type'    => 'select',
+                        'choices' => ['image' => 'تصویر', 'html' => 'کد HTML'],
+                        'default' => 'image',
+                    ],
+                    'hasht_home_hero_ad_4_image' => [
+                        'label'   => 'تصویر تبلیغ ۴',
+                        'type'    => 'upload',
+                        'default' => '',
+                    ],
+                    'hasht_home_hero_ad_4_link' => [
+                        'label'   => 'لینک تبلیغ ۴',
+                        'type'    => 'text',
+                        'default' => '',
+                    ],
+                    'hasht_home_hero_ad_4_html' => [
+                        'label'   => 'کد HTML تبلیغ ۴',
+                        'type'    => 'textarea',
+                        'default' => '',
+                    ],
                 ]
             ],
 
@@ -92,6 +196,32 @@ $settings = [
                         'description' => 'برای جلوگیری از تکرار مطالب هیرو',
                         'type'        => 'number',
                         'default'     => 5,
+                    ],
+                    'hasht_home_latest_top_ad_enable' => [
+                        'label'   => 'فعال‌سازی بنر افقی بالای بخش',
+                        'type'    => 'checkbox',
+                        'default' => 0,
+                    ],
+                    'hasht_home_latest_top_ad_type' => [
+                        'label'   => 'نوع ورودی بنر',
+                        'type'    => 'select',
+                        'choices' => ['image' => 'تصویر', 'html' => 'کد HTML'],
+                        'default' => 'image',
+                    ],
+                    'hasht_home_latest_top_ad_image' => [
+                        'label'   => 'تصویر بنر',
+                        'type'    => 'upload',
+                        'default' => '',
+                    ],
+                    'hasht_home_latest_top_ad_link' => [
+                        'label'   => 'لینک بنر',
+                        'type'    => 'text',
+                        'default' => '',
+                    ],
+                    'hasht_home_latest_top_ad_html' => [
+                        'label'   => 'کد HTML بنر',
+                        'type'    => 'textarea',
+                        'default' => '',
                     ],
                 ]
             ],
@@ -134,13 +264,118 @@ $settings = [
                         'type'        => 'number',
                         'default'     => 5,
                     ],
+                    'hasht_home_visited_ad_1_enable' => [
+                        'label'   => 'فعال‌سازی تبلیغ ۱ ستون کناری',
+                        'type'    => 'checkbox',
+                        'default' => 0,
+                    ],
+                    'hasht_home_visited_ad_1_type' => [
+                        'label'   => 'نوع ورودی تبلیغ ۱',
+                        'type'    => 'select',
+                        'choices' => ['image' => 'تصویر', 'html' => 'کد HTML'],
+                        'default' => 'image',
+                    ],
+                    'hasht_home_visited_ad_1_image' => [
+                        'label'   => 'تصویر تبلیغ ۱',
+                        'type'    => 'upload',
+                        'default' => '',
+                    ],
+                    'hasht_home_visited_ad_1_link' => [
+                        'label'   => 'لینک تبلیغ ۱',
+                        'type'    => 'text',
+                        'default' => '',
+                    ],
+                    'hasht_home_visited_ad_1_html' => [
+                        'label'   => 'کد HTML تبلیغ ۱',
+                        'type'    => 'textarea',
+                        'default' => '',
+                    ],
+                    'hasht_home_visited_ad_2_enable' => [
+                        'label'   => 'فعال‌سازی تبلیغ ۲ ستون کناری',
+                        'type'    => 'checkbox',
+                        'default' => 0,
+                    ],
+                    'hasht_home_visited_ad_2_type' => [
+                        'label'   => 'نوع ورودی تبلیغ ۲',
+                        'type'    => 'select',
+                        'choices' => ['image' => 'تصویر', 'html' => 'کد HTML'],
+                        'default' => 'image',
+                    ],
+                    'hasht_home_visited_ad_2_image' => [
+                        'label'   => 'تصویر تبلیغ ۲',
+                        'type'    => 'upload',
+                        'default' => '',
+                    ],
+                    'hasht_home_visited_ad_2_link' => [
+                        'label'   => 'لینک تبلیغ ۲',
+                        'type'    => 'text',
+                        'default' => '',
+                    ],
+                    'hasht_home_visited_ad_2_html' => [
+                        'label'   => 'کد HTML تبلیغ ۲',
+                        'type'    => 'textarea',
+                        'default' => '',
+                    ],
                 ]
             ],
 
             // 4. Topic Section (موضوعات ۶‌گانه)
             'hasht_home_topic_sec' => [
                 'title' => 'بخش موضوعات (Tabs)',
-                'fields' => []
+                'fields' => [
+                    'hasht_home_topics_top_ad_enable' => [
+                        'label'   => 'فعال‌سازی بنر افقی بالای بخش',
+                        'type'    => 'checkbox',
+                        'default' => 0,
+                    ],
+                    'hasht_home_topics_top_ad_type' => [
+                        'label'   => 'نوع ورودی بنر بالا',
+                        'type'    => 'select',
+                        'choices' => ['image' => 'تصویر', 'html' => 'کد HTML'],
+                        'default' => 'image',
+                    ],
+                    'hasht_home_topics_top_ad_image' => [
+                        'label'   => 'تصویر بنر بالا',
+                        'type'    => 'upload',
+                        'default' => '',
+                    ],
+                    'hasht_home_topics_top_ad_link' => [
+                        'label'   => 'لینک بنر بالا',
+                        'type'    => 'text',
+                        'default' => '',
+                    ],
+                    'hasht_home_topics_top_ad_html' => [
+                        'label'   => 'کد HTML بنر بالا',
+                        'type'    => 'textarea',
+                        'default' => '',
+                    ],
+                    'hasht_home_topics_bottom_ad_enable' => [
+                        'label'   => 'فعال‌سازی بنر افقی پایین بخش',
+                        'type'    => 'checkbox',
+                        'default' => 0,
+                    ],
+                    'hasht_home_topics_bottom_ad_type' => [
+                        'label'   => 'نوع ورودی بنر پایین',
+                        'type'    => 'select',
+                        'choices' => ['image' => 'تصویر', 'html' => 'کد HTML'],
+                        'default' => 'image',
+                    ],
+                    'hasht_home_topics_bottom_ad_image' => [
+                        'label'   => 'تصویر بنر پایین',
+                        'type'    => 'upload',
+                        'default' => '',
+                    ],
+                    'hasht_home_topics_bottom_ad_link' => [
+                        'label'   => 'لینک بنر پایین',
+                        'type'    => 'text',
+                        'default' => '',
+                    ],
+                    'hasht_home_topics_bottom_ad_html' => [
+                        'label'   => 'کد HTML بنر پایین',
+                        'type'    => 'textarea',
+                        'default' => '',
+                    ],
+                ]
             ],
         ]
     ]
@@ -166,5 +401,38 @@ for ($i = 1; $i <= 6; $i++) {
         'default' => '',
     ];
 }
+
+// بخش تنظیمات تبلیغات صفحات داخلی
+$settings['hasht_single_ads_sec'] = [
+    'title'  => 'تبلیغات صفحات داخلی',
+    'fields' => [
+        'hasht_single_aggr_sidebar_ad_enable' => [
+            'label'   => 'فعال‌سازی تبلیغ سایدبار خبر تجمیعی',
+            'type'    => 'checkbox',
+            'default' => 0,
+        ],
+        'hasht_single_aggr_sidebar_ad_type' => [
+            'label'   => 'نوع ورودی تبلیغ',
+            'type'    => 'select',
+            'choices' => ['image' => 'تصویر', 'html' => 'کد HTML'],
+            'default' => 'image',
+        ],
+        'hasht_single_aggr_sidebar_ad_image' => [
+            'label'   => 'تصویر تبلیغ',
+            'type'    => 'upload',
+            'default' => '',
+        ],
+        'hasht_single_aggr_sidebar_ad_link' => [
+            'label'   => 'لینک تبلیغ',
+            'type'    => 'text',
+            'default' => '',
+        ],
+        'hasht_single_aggr_sidebar_ad_html' => [
+            'label'   => 'کد HTML تبلیغ',
+            'type'    => 'textarea',
+            'default' => '',
+        ],
+    ],
+];
 
 return $settings;

@@ -5,11 +5,40 @@
 
 <!-- Horizontal Ad (Desktop Only) -->
 <div class="hidden md:block max-w-[1200px] mx-auto px-4 sm:px-6 mb-10">
-    <div
-        class="bg-gray-100 border border-gray-200 rounded-xl flex items-center justify-center h-32 relative overflow-hidden">
-        <div class="absolute top-2 right-2 bg-gray-200 text-gray-500 text-[10px] px-2 py-0.5 rounded">تبلیغات
+    <?php
+    $l_enabled = (bool) get_theme_mod('hasht_home_latest_top_ad_enable', 0);
+    $l_type    = get_theme_mod('hasht_home_latest_top_ad_type', 'image');
+    $l_img     = get_theme_mod('hasht_home_latest_top_ad_image', '');
+    $l_link    = get_theme_mod('hasht_home_latest_top_ad_link', '');
+    $l_html    = get_theme_mod('hasht_home_latest_top_ad_html', '');
+    $l_has     = false;
+    if ($l_enabled) {
+        if ($l_type === 'image' && $l_img !== '') {
+            $l_has = true;
+        } elseif ($l_type === 'html' && trim((string)$l_html) !== '') {
+            $l_has = true;
+        }
+    }
+    ?>
+    <div class="bg-gray-100 border border-gray-200 rounded-xl flex items-center justify-center h-32 relative overflow-hidden">
+        <div class="absolute top-2 right-2 bg-gray-200 text-gray-500 text-[10px] px-2 py-0.5 rounded">تبلیغات</div>
+        <div class="w-full text-center">
+            <?php if ($l_has) : ?>
+                <?php if ($l_type === 'image') : ?>
+                    <?php if ($l_link !== '') : ?>
+                        <a href="<?php echo esc_url($l_link); ?>" target="_blank" rel="noopener">
+                            <img src="<?php echo esc_url($l_img); ?>" alt="تبلیغ" class="mx-auto block max-h-32">
+                        </a>
+                    <?php else : ?>
+                        <img src="<?php echo esc_url($l_img); ?>" alt="تبلیغ" class="mx-auto block max-h-32">
+                    <?php endif; ?>
+                <?php else : ?>
+                    <?php echo wp_kses_post($l_html); ?>
+                <?php endif; ?>
+            <?php else : ?>
+                <span class="text-gray-400 font-bold text-2xl">جایگاه تبلیغاتی (۹۷۰ × ۲۵۰)</span>
+            <?php endif; ?>
         </div>
-        <span class="text-gray-400 font-bold text-2xl">جایگاه تبلیغاتی (۹۷۰ × ۲۵۰)</span>
     </div>
 </div>
 

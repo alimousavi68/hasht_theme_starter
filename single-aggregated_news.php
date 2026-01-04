@@ -115,8 +115,40 @@ core_start_section('content');
                     </div>
 
                     <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                        <div class="w-full aspect-[4/3] bg-gray-50 rounded-lg border border-dashed border-gray-200 flex items-center justify-center text-sm text-gray-400">
-                            تبلیغات
+                        <?php
+                        $s_enabled = (bool) get_theme_mod('hasht_single_aggr_sidebar_ad_enable', 0);
+                        $s_type    = get_theme_mod('hasht_single_aggr_sidebar_ad_type', 'image');
+                        $s_img     = get_theme_mod('hasht_single_aggr_sidebar_ad_image', '');
+                        $s_link    = get_theme_mod('hasht_single_aggr_sidebar_ad_link', '');
+                        $s_html    = get_theme_mod('hasht_single_aggr_sidebar_ad_html', '');
+                        $s_has     = false;
+                        if ($s_enabled) {
+                            if ($s_type === 'image' && $s_img !== '') {
+                                $s_has = true;
+                            } elseif ($s_type === 'html' && trim((string)$s_html) !== '') {
+                                $s_has = true;
+                            }
+                        }
+                        ?>
+                        <div class="w-full aspect-[4/3] bg-gray-50 rounded-lg border border-dashed border-gray-200 flex items-center justify-center text-sm text-gray-400 relative overflow-hidden">
+                            <div class="absolute top-2 right-2 bg-gray-200 text-gray-500 text-[10px] px-2 py-0.5 rounded">تبلیغات</div>
+                            <div class="w-full h-full flex items-center justify-center">
+                                <?php if ($s_has) : ?>
+                                    <?php if ($s_type === 'image') : ?>
+                                        <?php if ($s_link !== '') : ?>
+                                            <a href="<?php echo esc_url($s_link); ?>" target="_blank" rel="noopener">
+                                                <img src="<?php echo esc_url($s_img); ?>" alt="تبلیغ" class="max-h-full mx-auto block">
+                                            </a>
+                                        <?php else : ?>
+                                            <img src="<?php echo esc_url($s_img); ?>" alt="تبلیغ" class="max-h-full mx-auto block">
+                                        <?php endif; ?>
+                                    <?php else : ?>
+                                        <?php echo wp_kses_post($s_html); ?>
+                                    <?php endif; ?>
+                                <?php else : ?>
+                                    تبلیغات
+                                <?php endif; ?>
+                            </div>
                         </div>
                     </div>
                 </div>

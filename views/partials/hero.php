@@ -108,48 +108,43 @@
 
         <!-- Sidebar (1/4) -->
         <div class="lg:col-span-3 flex flex-col gap-3">
-            <!-- Ad -->
-            <div
-                class="bg-gray-50 border border-gray-200 rounded-xl flex items-center justify-center min-h-[100px] relative overflow-hidden">
-                <div class="absolute top-2 right-2 bg-gray-200 text-gray-500 text-[10px] px-2 py-0.5 rounded">
-                    تبلیغات</div>
-                <div class="text-center p-6">
-                    <span class="block text-gray-400 font-bold text-xl mb-2">بنر تبلیغاتی</span>
-                    <span class="block text-gray-400 text-sm">۱۰۰ × ۲۵۰</span>
+            <?php for ($i = 1; $i <= 4; $i++) : 
+                $enabled = (bool) get_theme_mod("hasht_home_hero_ad_{$i}_enable", 0);
+                $type    = get_theme_mod("hasht_home_hero_ad_{$i}_type", 'image');
+                $img     = get_theme_mod("hasht_home_hero_ad_{$i}_image", '');
+                $link    = get_theme_mod("hasht_home_hero_ad_{$i}_link", '');
+                $html    = get_theme_mod("hasht_home_hero_ad_{$i}_html", '');
+                $has_content = false;
+                if ($enabled) {
+                    if ($type === 'image' && $img !== '') {
+                        $has_content = true;
+                    } elseif ($type === 'html' && trim((string)$html) !== '') {
+                        $has_content = true;
+                    }
+                }
+            ?>
+            <div class="bg-gray-50 border border-gray-200 rounded-xl flex items-center justify-center min-h-[100px] relative overflow-hidden">
+                <div class="absolute top-2 right-2 bg-gray-200 text-gray-500 text-[10px] px-2 py-0.5 rounded">تبلیغات</div>
+                <div class="text-center p-6 w-full">
+                    <?php if ($has_content) : ?>
+                        <?php if ($type === 'image') : ?>
+                            <?php if ($link !== '') : ?>
+                                <a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener">
+                                    <img src="<?php echo esc_url($img); ?>" alt="تبلیغ" class="mx-auto block max-h-40">
+                                </a>
+                            <?php else : ?>
+                                <img src="<?php echo esc_url($img); ?>" alt="تبلیغ" class="mx-auto block max-h-40">
+                            <?php endif; ?>
+                        <?php else : ?>
+                            <?php echo wp_kses_post($html); ?>
+                        <?php endif; ?>
+                    <?php else : ?>
+                        <span class="block text-gray-400 font-bold text-xl mb-2">بنر تبلیغاتی</span>
+                        <span class="block text-gray-400 text-sm">۱۰۰ × ۲۵۰</span>
+                    <?php endif; ?>
                 </div>
             </div>
-                <!-- Ad -->
-            <div
-                class="bg-gray-50 border border-gray-200 rounded-xl flex items-center justify-center min-h-[100px] relative overflow-hidden">
-                <div class="absolute top-2 right-2 bg-gray-200 text-gray-500 text-[10px] px-2 py-0.5 rounded">
-                    تبلیغات</div>
-                <div class="text-center p-6">
-                    <span class="block text-gray-400 font-bold text-xl mb-2">بنر تبلیغاتی</span>
-                    <span class="block text-gray-400 text-sm">۱۰۰ × ۲۵۰</span>
-                </div>
-            </div>
-                <!-- Ad -->
-            <div
-                class="bg-gray-50 border border-gray-200 rounded-xl flex items-center justify-center min-h-[100px] relative overflow-hidden">
-                <div class="absolute top-2 right-2 bg-gray-200 text-gray-500 text-[10px] px-2 py-0.5 rounded">
-                    تبلیغات</div>
-                <div class="text-center p-6">
-                    <span class="block text-gray-400 font-bold text-xl mb-2">بنر تبلیغاتی</span>
-                    <span class="block text-gray-400 text-sm">۱۰۰ × ۲۵۰</span>
-                </div>
-            </div>
-                <!-- Ad -->
-            <div
-                class="bg-gray-50 border border-gray-200 rounded-xl flex items-center justify-center min-h-[100px] relative overflow-hidden">
-                <div class="absolute top-2 right-2 bg-gray-200 text-gray-500 text-[10px] px-2 py-0.5 rounded">
-                    تبلیغات</div>
-                <div class="text-center p-6">
-                    <span class="block text-gray-400 font-bold text-xl mb-2">بنر تبلیغاتی</span>
-                    <span class="block text-gray-400 text-sm">۱۰۰ × ۲۵۰</span>
-                </div>
-            </div>
-            
-
+            <?php endfor; ?>
         </div>
     </div>
     </div>

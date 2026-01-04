@@ -76,20 +76,43 @@
                 </div>
             </div>
             <div class="lg:col-span-3 flex flex-col gap-6">
+                <?php for ($j = 1; $j <= 2; $j++) : 
+                    $v_enabled = (bool) get_theme_mod("hasht_home_visited_ad_{$j}_enable", 0);
+                    $v_type    = get_theme_mod("hasht_home_visited_ad_{$j}_type", 'image');
+                    $v_img     = get_theme_mod("hasht_home_visited_ad_{$j}_image", '');
+                    $v_link    = get_theme_mod("hasht_home_visited_ad_{$j}_link", '');
+                    $v_html    = get_theme_mod("hasht_home_visited_ad_{$j}_html", '');
+                    $v_has     = false;
+                    if ($v_enabled) {
+                        if ($v_type === 'image' && $v_img !== '') {
+                            $v_has = true;
+                        } elseif ($v_type === 'html' && trim((string)$v_html) !== '') {
+                            $v_has = true;
+                        }
+                    }
+                ?>
                 <div class="bg-gray-50 border border-gray-200 rounded-xl flex items-center justify-center min-h-[100px] relative overflow-hidden">
                     <div class="absolute top-2 right-2 bg-gray-200 text-gray-500 text-[10px] px-2 py-0.5 rounded">تبلیغات</div>
-                    <div class="text-center p-6">
-                        <span class="block text-gray-400 font-bold text-xl mb-2">بنر تبلیغاتی</span>
-                        <span class="block text-gray-400 text-sm">۱۰۰ × ۲۵۰</span>
+                    <div class="text-center p-6 w-full">
+                        <?php if ($v_has) : ?>
+                            <?php if ($v_type === 'image') : ?>
+                                <?php if ($v_link !== '') : ?>
+                                    <a href="<?php echo esc_url($v_link); ?>" target="_blank" rel="noopener">
+                                        <img src="<?php echo esc_url($v_img); ?>" alt="تبلیغ" class="mx-auto block max-h-40">
+                                    </a>
+                                <?php else : ?>
+                                    <img src="<?php echo esc_url($v_img); ?>" alt="تبلیغ" class="mx-auto block max-h-40">
+                                <?php endif; ?>
+                            <?php else : ?>
+                                <?php echo wp_kses_post($v_html); ?>
+                            <?php endif; ?>
+                        <?php else : ?>
+                            <span class="block text-gray-400 font-bold text-xl mb-2">بنر تبلیغاتی</span>
+                            <span class="block text-gray-400 text-sm">۱۰۰ × ۲۵۰</span>
+                        <?php endif; ?>
                     </div>
                 </div>
-                <div class="bg-gray-50 border border-gray-200 rounded-xl flex items-center justify-center min-h-[100px] relative overflow-hidden">
-                    <div class="absolute top-2 right-2 bg-gray-200 text-gray-500 text-[10px] px-2 py-0.5 rounded">تبلیغات</div>
-                    <div class="text-center p-6">
-                        <span class="block text-gray-400 font-bold text-xl mb-2">بنر تبلیغاتی</span>
-                        <span class="block text-gray-400 text-sm">۱۰۰ × ۲۵۰</span>
-                    </div>
-                </div>
+                <?php endfor; ?>
             </div>
         </div>
 
